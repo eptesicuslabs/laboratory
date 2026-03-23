@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "Eptesicus Laboratories",
-  description: "Reliability Engineering for Local AI.",
+  description: "Independent AI research lab. Building efficient neural architectures and open-source AI tooling.",
 };
 
 import { LanguageProvider } from "@/components/providers/LanguageProvider";

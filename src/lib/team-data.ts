@@ -20,10 +20,10 @@ export const TEAM_MEMBERS: Record<string, TeamMember> = {
     "deyan-todorov": {
         slug: "deyan-todorov",
         name: "Deyan Todorov",
-        role: "Founder & Operator",
-        bio: "Building towards a future where capable AI runs on customer hardware. Focused on small language models and the architectural innovations that make them practical for real deployment.",
-        stack: ["Systems Architecture", "Rust", "LLM Eval", "Governance Structures"],
-        narrative: "The path forward isn't bigger models—it's smarter architectures. Small language models, paired with the right reliability infrastructure, can deliver enterprise-grade intelligence without the cloud dependency.",
+        role: "Founder & Researcher",
+        bio: "Researching efficient neural architectures that outperform transformers at a fraction of the compute. Building open-source AI tooling for local-first development workflows.",
+        stack: ["Neural Architecture Design", "Rust", "PyTorch", "Systems Architecture"],
+        narrative: "The path forward isn't bigger models — it's smarter architectures. We're proving that unified designs combining linear attention, state-space models, and latent attention can deliver more capability per compute than conventional transformers.",
         image: "/images/team/deyan-todorov.jpg",
         socials: {
             github: "https://github.com/dttdrv",
@@ -34,10 +34,10 @@ export const TEAM_MEMBERS: Record<string, TeamMember> = {
     "iliyan-bozhanov": {
         slug: "iliyan-bozhanov",
         name: "Iliyan Bozhanov",
-        role: "Co-Founder & CTO",
-        bio: "Architecting the distributed validation layer for Lumis-1.",
+        role: "Co-Founder",
+        bio: "Architecting the distributed systems and tooling infrastructure that powers Eptesicus research and open-source projects.",
         stack: ["Distributed Systems", "Cryptography", "Model Optimization", "Python"],
-        narrative: "Building the engine that proves small models can punch above their weight class through rigorous mathematical verification.",
+        narrative: "Building the infrastructure that lets small, efficient models prove they can punch above their weight class through rigorous engineering and open-source collaboration.",
         image: "/images/team/iliyan-bozhanov.jpg",
         socials: {
             instagram: "https://www.instagram.com/iliyan_bozhanov",

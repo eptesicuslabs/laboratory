@@ -111,7 +111,7 @@ export default function ContactModal({ isOpen, initialSubject, onClose }: Contac
                         </div>
 
                         <p className="text-body-sm text-[var(--text-secondary)] mb-[var(--space-6)]">
-                            Tell us about your project or request a pitch deck.
+                            Tell us about a collaboration or research inquiry.
                         </p>
 
                         {status === 'success' ? (

@@ -2,89 +2,62 @@ export const translations = {
     en: {
         nav: {
             about: "About",
-            products: "Products",
+            research: "Research",
             team: "Team",
-            manifesto: "Manifesto",
-            work: "Work",
             contact: "Contact"
         },
         hero: {
             title: "Eptesicus Laboratories",
-            subtitle: "Advancing On-device intelligence",
-            body: "We build a governance and evaluation runtime that makes on-device AI deployments more auditable and cost-predictable, starting with Lumis-1 as the first packaged product.",
-            pills: ["Reduces cloud API spend", "Enterprise licensing", "OEM/ISV partnerships"],
+            subtitle: "Independent AI Research",
             cta: {
-                primary: "Request Pitch Deck",
-                secondary: "Join Pilot Program"
+                primary: "View on GitHub"
             }
         },
         about: {
             label: "ABOUT",
-            headline: "Our objective is to make on-device AI the default for real products.",
-            intro1: "Cloud AI is easy to start with, but expensive and restrictive to scale. On-device deployment gives teams control over cost, privacy, and availability, but only works when models are efficient and behavior is reliable.",
-            intro2: "We develop small language models optimized for strong performance per compute and pair them with reliability engineering so enterprises can ship on-device intelligence with confidence.",
+            headline: "We research efficient AI architectures and build open-source tooling for AI-native workflows.",
             problemLabel: "The Problem",
-            problemBody: "Cloud-first AI creates compounding costs, vendor lock-in, and data exposure. Meanwhile, many small models still struggle with consistency and safe failure modes, which blocks serious deployment.",
-            solutionLabel: "Our Solution",
-            approachLabel: "Our Approach",
-            approachTagline: "We build for shipping, not demos.",
-            grid: [
-                { title: "Model R&D", desc: "improve capability per compute in small language models (measured against public baselines and internal evals)." },
-                { title: "Reliability infrastructure", desc: "datasets + evaluation harnesses that catch regressions and quantify improvements." },
-                { title: "Deployment pathways", desc: "packaging, controls, and integration patterns that work for enterprise and OEM/ISV distribution." }
-            ],
-            visionLabel: "Vision",
-            visionBody: "A world where AI runs primarily on customer-controlled hardware, with small models that are both capable and dependable. Eptesicus Laboratories will build a portfolio of on-device models and reliability tooling that can be licensed, bundled, and supported at scale, while also releasing community-facing applications that prove the on-device experience can feel top-tier.",
-            leadershipQuote: "“We’re building the foundation for on-device AI to scale commercially: efficient small models, reliability you can measure, and distribution through enterprise licensing and OEM/ISV partnerships.”",
+            problemBody: "Foundation models are powerful but compute-hungry, cloud-dependent, and closed. As AI becomes infrastructure, we need architectures that are efficient by design and tools that run locally.",
+            solutionLabel: "Our Approach",
+            visionBody: "We combine neural architecture research with practical open-source tooling. Our architecture work explores unified models that outperform transformers at a fraction of the compute. Our tooling makes AI development workflows faster and local-first.",
             roles: {
-                deyan: "Founder & Operator",
-                iliyan: "Co-Founder & CTO"
+                deyan: "Founder & Researcher",
+                iliyan: "Co-Founder"
             }
         },
-        validator: {
-            label: "THE RELIABILITY LAYER",
-            headline: "Deterministic control over probabilistic output.",
-            description: "Our runtime wraps the core model with a deterministic Validator Council. Every output is checked against safety, factual, and structural policies before it reaches the user.",
-            steps: [
-                { id: "draft", title: "Draft", desc: "The core model generates a candidate response based on the input context." },
-                { id: "validate", title: "Validate", desc: "The Validator Council executes parallel checks for safety, schema compliance, and logic." },
-                { id: "correct", title: "Correct", desc: "If a check fails, the steering loop triggers a regeneration with specific constraints." },
-                { id: "output", title: "Output", desc: "Only verified, compliant content is released to the downstream application." }
+        research: {
+            label: "RESEARCH",
+            headline: "Open-source AI research and tooling.",
+            projects: [
+                {
+                    id: "todorov",
+                    name: "todorov",
+                    tagline: "Unified Neural Architecture",
+                    description: "312M params combining KDA, Mamba-3, and MLA. Outperforms same-size transformers by 16%.",
+                    url: "https://github.com/eptesicuslabs/todorov"
+                },
+                {
+                    id: "emcp",
+                    name: "eMCP",
+                    tagline: "Open-Source MCP Servers",
+                    description: "34 local MCP servers exposing 130+ tools for desktop AI workflows.",
+                    url: "https://github.com/eptesicuslabs/eMCP"
+                },
+                {
+                    id: "eskill",
+                    name: "eSkill",
+                    tagline: "Claude Code Skills",
+                    description: "44 skills and 6 agents that orchestrate MCP tools into higher-level workflows.",
+                    url: "https://github.com/eptesicuslabs/eSkill"
+                },
+                {
+                    id: "eagent",
+                    name: "eAgent",
+                    tagline: "AI Agent Platform",
+                    description: "Rust/Tauri desktop app for multi-agent orchestration. Provider-agnostic.",
+                    url: "https://github.com/eptesicuslabs/eAgent"
+                }
             ]
-        },
-        useCases: {
-            label: "USE CASES",
-            headline: "High-value deployment environments.",
-            cases: [
-                { icon: "legal", title: "LegalTech", desc: "Automated contract review within strict data residency boundaries. No client data ever leaves the secure enclave." },
-                { icon: "health", title: "Healthcare", desc: "Clinical note structuring and patient data processing on hospital hardware, ensuring HIPAA compliance and zero latency." },
-                { icon: "industrial", title: "Industrial", desc: "Offline maintenance assistants for field technicians. Technical manuals and diagnostic AI available without internet connectivity." }
-            ]
-        },
-        economics: {
-            label: "THE ECONOMICS",
-            headline: "Predictable costs at any scale.",
-            cloudTitle: "Cloud AI",
-            cloudDesc: "Costs scale linearly with usage. High per-token fees, unpredictable monthly bills, and data transfer charges punish growth.",
-            onDeviceTitle: "On-Device",
-            onDeviceDesc: "Leverage existing hardware with zero marginal cost per token. Flat licensing puts you in control of your margins."
-        },
-        technology: {
-            header: "Technology",
-            subheader: "Raising €50,000 to build reliability datasets and acceptance tests, harden the runtime and trace artifacts, and deliver a pilot-ready Lumis-1 package.",
-            lumis: {
-                name: "Lumis-1",
-                status: "[IN DEVELOPMENT]",
-                desc: "Our first packaged product: an on-device assistant with a lightweight Validator Council (Safety, Consistency, Accuracy/Support) and a bounded steering loop. Proves the platform thesis and provides a concrete product for early enterprise pilots.",
-                pitchDeck: "Request Pitch Deck",
-                businessPlan: "View Business Plan",
-                specsLabel: "SYS.SPEC",
-                specs: [
-                    "On-device",
-                    "Offline-capable",
-                    "Reliability layer"
-                ]
-            }
         },
         team: {
             label: "Our Team",
@@ -93,103 +66,74 @@ export const translations = {
             narrative: "Operational Narrative",
             stack: "Technical Capability Stack"
         },
-        products: {
-            label: "Products",
-            description: "An on-device AI assistant with a lightweight Validator Council and bounded steering loop.",
-            status: "In Development",
-            overviewText: "Our first packaged product: an on-device assistant with a lightweight Validator Council (Safety, Consistency, Accuracy/Support) and a bounded steering loop. Proves the platform thesis and provides a concrete product for early enterprise pilots.",
-            specsTitle: "Technical Specifications",
-            specs: ["On-device processing", "Offline-capable", "Reliability layer built-in", "Enterprise-ready"],
-            tabs: {
-                overview: "Overview",
-                reliability: "Reliability Layer",
-                economics: "Economics",
-                useCases: "Use Cases"
-            }
-        },
         footer: {
-            pitchDeck: "Pitch Deck",
+            github: "GitHub",
             legal: "Eptesicus Laboratories is a brand operated by Deyan Todorov and Iliyan Bozhanov. Incorporation pending. All agreements are currently entered into by the founders directly.",
             rights: "All rights reserved.",
             x_twitter: "X (Twitter)",
             instagram: "Instagram",
             contact: "Contact"
-        },
-        publications: {
-            label: "PUBLICATIONS",
-            headline: "Latest Insights",
-            pageTitle: "Publications",
-            pageDescription: "Research, case studies, and insights on on-device AI and reliability engineering.",
-            viewAll: "View all publications",
-            readMore: "Read more",
-            backToList: "Back to Publications",
-            backToHome: "Back to Home",
-            minRead: "min read",
-            share: "Share",
-            noResults: "No publications found in this category.",
-            categories: {
-                all: "All",
-                research: "Research",
-                caseStudy: "Case Study",
-                news: "News",
-                announcement: "Announcement"
-            }
         }
     },
     de: {
         nav: {
             about: "Über Uns",
-            products: "Produkte",
+            research: "Forschung",
             team: "Team",
-            manifesto: "Manifest",
-            work: "Arbeit",
             contact: "Kontakt"
         },
         hero: {
             title: "Eptesicus Laboratories",
-            subtitle: "Lokale KI mit vorhersehbaren Stückkosten.",
-            body: "Wir entwickeln leistungsstarke kleine Sprachmodelle und die Zuverlässigkeitsinfrastruktur für den Einsatz auf kundeneigener Hardware, um die Abhängigkeit von Cloud-APIs zu reduzieren.",
-            pills: ["Reduziert Cloud-API-Kosten", "Enterprise-Lizenzierung", "OEM/ISV-Partnerschaften"]
+            subtitle: "Unabhängige KI-Forschung",
+            cta: {
+                primary: "Auf GitHub ansehen"
+            }
         },
         about: {
             label: "ÜBER UNS",
-            headline: "Unser Ziel ist es, lokale KI zum Standard für reale Produkte zu machen.",
-            intro1: "Cloud-KI ist einfach zu beginnen, aber teuer und restriktiv zu skalieren. Lokale Bereitstellung gibt Teams Kontrolle über Kosten, Privatsphäre und Verfügbarkeit, funktioniert aber nur, wenn Modelle effizient und zuverlässig sind.",
-            intro2: "Wir entwickeln kleine Sprachmodelle, die für starke Leistung pro Recheneinheit optimiert sind, und kombinieren sie mit Zuverlässigkeits-Engineering, damit Unternehmen lokale Intelligenz mit Vertrauen ausliefern können.",
+            headline: "Wir erforschen effiziente KI-Architekturen und entwickeln Open-Source-Tools für KI-native Workflows.",
             problemLabel: "Das Problem",
-            problemBody: "Cloud-First-KI verursacht steigende Kosten, Herstellerbindung und Datenexponierung. Viele kleine Modelle kämpfen noch mit Konsistenz und sicheren Fehlermodi, was ernsthafte Einsätze blockiert.",
-            solutionLabel: "Unsere Lösung",
-            approachLabel: "Unser Ansatz",
-            approachTagline: "Wir bauen für den Einsatz, nicht für Demos.",
-            grid: [
-                { title: "Modell-F&E", desc: "Verbesserung der Fähigkeit pro Recheneinheit in kleinen Sprachmodellen (gemessen an öffentlichen Baselines und internen Evals)." },
-                { title: "Zuverlässigkeitsinfrastruktur", desc: "Datensätze + Evaluierungs-Harnische, die Regressionen erfassen und Verbesserungen quantifizieren." },
-                { title: "Bereitstellungswege", desc: "Verpackung, Kontrollen und Integrationsmuster, die für Enterprise- und OEM/ISV-Vertrieb funktionieren." }
-            ],
-            visionLabel: "Vision",
-            visionBody: "Eine Welt, in der KI primär auf kundeneigener Hardware läuft, mit kleinen Modellen, die sowohl fähig als auch zuverlässig sind. Eptesicus Laboratories wird ein Portfolio von lokalen Modellen und Zuverlässigkeits-Tools aufbauen, die lizenziert, gebündelt und skaliert unterstützt werden können, während wir auch Community-Anwendungen veröffentlichen, die beweisen, dass sich die lokale Erfahrung erstklassig anfühlen kann.",
-            leadershipQuote: "“Wir bauen das Fundament für die kommerzielle Skalierung von lokaler KI: effiziente kleine Modelle, messbare Zuverlässigkeit und Vertrieb durch Enterprise-Lizenzierung und OEM/ISV-Partnerschaften.”",
+            problemBody: "Foundation-Modelle sind leistungsstark, aber rechenintensiv, cloudabhängig und geschlossen. Da KI zur Infrastruktur wird, brauchen wir Architekturen, die von Grund auf effizient sind, und Tools, die lokal laufen.",
+            solutionLabel: "Unser Ansatz",
+            visionBody: "Wir kombinieren Forschung an neuronalen Architekturen mit praktischen Open-Source-Tools. Unsere Architekturarbeit erforscht vereinheitlichte Modelle, die Transformers bei einem Bruchteil der Rechenleistung übertreffen. Unsere Tools machen KI-Entwicklungs-Workflows schneller und local-first.",
             roles: {
-                deyan: "Gründer & Betreiber",
-                iliyan: "Mitgründer & CTO"
+                deyan: "Gründer & Forscher",
+                iliyan: "Mitgründer"
             }
         },
-        work: {
-            header: "Aktive Direktiven",
-            subheader: "Derzeit auf der Suche nach Pre-Seed-Finanzierung zur Erweiterung von Zuverlässigkeitsdatensätzen, Sicherung früher Enterprise-Piloten zur Senkung von API-Kosten und Vertiefung von OEM/ISV-Partnerschaften.",
-            lumis: {
-                name: "Lumis-1",
-                status: "[IN ENTWICKLUNG]",
-                desc: "Unser erstes kommerzielles Produkt: ein lokaler Assistent, entworfen um den Business Case für lokale Bereitstellung (Kostenkontrolle, Privatsphäre, Verfügbarkeit) zu validieren und weitere F&E zu finanzieren.",
-                pitchDeck: "Pitch Deck (PDF)",
-                businessPlan: "Businessplan (PDF)",
-                specsLabel: "SYS.SPEZ",
-                specs: [
-                    "Lokal (On-device)",
-                    "Offline-fähig",
-                    "Zuverlässigkeitsschicht"
-                ]
-            }
+        research: {
+            label: "FORSCHUNG",
+            headline: "Open-Source KI-Forschung und Tooling.",
+            projects: [
+                {
+                    id: "todorov",
+                    name: "todorov",
+                    tagline: "Vereinheitlichte neuronale Architektur",
+                    description: "312M Parameter, kombiniert KDA, Mamba-3 und MLA. Übertrifft gleichgroße Transformer um 16%.",
+                    url: "https://github.com/eptesicuslabs/todorov"
+                },
+                {
+                    id: "emcp",
+                    name: "eMCP",
+                    tagline: "Open-Source MCP-Server",
+                    description: "34 lokale MCP-Server mit 130+ Tools für Desktop-KI-Workflows.",
+                    url: "https://github.com/eptesicuslabs/eMCP"
+                },
+                {
+                    id: "eskill",
+                    name: "eSkill",
+                    tagline: "Claude Code Skills",
+                    description: "44 Skills und 6 Agenten, die MCP-Tools zu höheren Workflows orchestrieren.",
+                    url: "https://github.com/eptesicuslabs/eSkill"
+                },
+                {
+                    id: "eagent",
+                    name: "eAgent",
+                    tagline: "KI-Agenten-Plattform",
+                    description: "Rust/Tauri Desktop-App für Multi-Agenten-Orchestrierung. Anbieterunabhängig.",
+                    url: "https://github.com/eptesicuslabs/eAgent"
+                }
+            ]
         },
         team: {
             label: "Unser Team",
@@ -198,103 +142,74 @@ export const translations = {
             narrative: "Operatives Narrativ",
             stack: "Technischer Fähigkeits-Stack"
         },
-        products: {
-            label: "Produkte",
-            description: "Ein lokaler KI-Assistent mit leichtgewichtigem Validator Council und begrenztem Steering Loop.",
-            status: "In Entwicklung",
-            overviewText: "Unser erstes Paketprodukt: ein lokaler Assistent mit leichtgewichtigem Validator Council (Safety, Consistency, Accuracy/Support) und begrenztem Steering Loop.",
-            specsTitle: "Technische Spezifikationen",
-            specs: ["Lokale Verarbeitung", "Offline-fähig", "Eingebaute Zuverlässigkeitsschicht", "Enterprise-ready"],
-            tabs: {
-                overview: "Übersicht",
-                reliability: "Zuverlässigkeitsschicht",
-                economics: "Wirtschaft",
-                useCases: "Anwendungsfälle"
-            }
-        },
         footer: {
-            pitchDeck: "Pitch Deck",
+            github: "GitHub",
             legal: "Eptesicus Laboratories ist eine Marke von Deyan Todorov und Iliyan Bozhanov. Eptesicus Laboratories ist keine eingetragene juristische Person. Alle Verträge werden von Deyan Todorov und Iliyan Bozhanov geschlossen.",
             rights: "Alle Rechte vorbehalten.",
             x_twitter: "X (Twitter)",
             instagram: "Instagram",
             contact: "Kontakt"
-        },
-        publications: {
-            label: "PUBLIKATIONEN",
-            headline: "Neueste Einblicke",
-            pageTitle: "Publikationen",
-            pageDescription: "Forschung, Fallstudien und Einblicke zu On-Device-KI und Zuverlässigkeits-Engineering.",
-            viewAll: "Alle Publikationen",
-            readMore: "Weiterlesen",
-            backToList: "Zurück zu Publikationen",
-            backToHome: "Zur Startseite",
-            minRead: "Min. Lesezeit",
-            share: "Teilen",
-            noResults: "Keine Publikationen in dieser Kategorie gefunden.",
-            categories: {
-                all: "Alle",
-                research: "Forschung",
-                caseStudy: "Fallstudie",
-                news: "Nachrichten",
-                announcement: "Ankündigung"
-            }
         }
     },
     bg: {
         nav: {
             about: "За Нас",
-            products: "Продукти",
+            research: "Изследвания",
             team: "Екип",
-            manifesto: "Манифест",
-            work: "Дейност",
             contact: "Контакт"
         },
         hero: {
             title: "Eptesicus Laboratories",
-            subtitle: "On-device AI с предвидима икономическа ефективност.",
-            body: "Изграждаме среда за управление и оценка, която прави внедряването на on-device AI по-проследимо и разходно предсказуемо, като започваме с Lumis-1 като първи пакетиран продукт.",
-            pills: ["Намалява разходите за Cloud API", "Enterprise лицензиране", "OEM/ISV партньорства"]
+            subtitle: "Независими AI изследвания",
+            cta: {
+                primary: "Вижте в GitHub"
+            }
         },
         about: {
             label: "ЗА НАС",
-            headline: "Нашата цел е да направим on-device AI стандарт за реални продукти.",
-            intro1: "Cloud AI е лесен за стартиране, но скъп и ограничаващ за мащабиране. On-device внедряването дава на екипите контрол върху разходите, поверителността и наличността, но работи само когато моделите са ефективни и надеждни.",
-            intro2: "Разработваме малки езикови модели, оптимизирани за висока производителност, и ги съчетаваме с инженеринг за надеждност, така че предприятията да могат да внедряват on-device интелект с увереност.",
+            headline: "Изследваме ефективни AI архитектури и създаваме open-source инструменти за AI-native работни процеси.",
             problemLabel: "Проблемът",
-            problemBody: "Cloud-first AI създава нарастващи разходи, зависимост от доставчика и излагане на данни. Междувременно много малки модели все още се борят с последователността и безопасните режими на отказ, което блокира сериозното внедряване.",
-            solutionLabel: "Нашето Решение",
-            approachLabel: "Нашият Подход",
-            approachTagline: "Строим за доставка, не за демо.",
-            grid: [
-                { title: "Model R&D", desc: "подобряване на способността на малки езикови модели (измерено спрямо публични базови линии и вътрешни evals)." },
-                { title: "Инфраструктура за надеждност", desc: "набори от данни + инструменти за оценка, които улавят регресии и количествено определят подобренията." },
-                { title: "Пътища за внедряване", desc: "пакетиране, контроли и интеграционни модели, които работят за enterprise и OEM/ISV разпространение." }
-            ],
-            visionLabel: "Визия",
-            visionBody: "Свят, в който AI работи предимно на хардуер, контролиран от клиента, с малки модели, които са както способни, така и надеждни. Eptesicus Laboratories ще изгради портфолио от on-device модели и инструменти за надеждност.",
-            leadershipQuote: "„Изграждаме основата за търговско мащабиране на on-device AI: ефективни малки модели, измерима надеждност и разпространение чрез enterprise лицензиране.“",
+            problemBody: "Foundation моделите са мощни, но изискват огромни изчислителни ресурси, зависят от облака и са затворени. С превръщането на AI в инфраструктура са нужни архитектури, ефективни по дизайн, и инструменти, които работят локално.",
+            solutionLabel: "Нашият подход",
+            visionBody: "Съчетаваме изследвания на невронни архитектури с практични open-source инструменти. Архитектурната ни работа изследва унифицирани модели, които превъзхождат трансформерите при малка част от изчислителните ресурси. Инструментите ни правят AI работните процеси по-бързи и local-first.",
             roles: {
-                deyan: "Основател & Оператор",
-                iliyan: "Съосновател & CTO"
+                deyan: "Основател & Изследовател",
+                iliyan: "Съосновател"
             }
         },
-        work: {
-            header: "Активни Директиви",
-            subheader: "Набираме €50,000 за изграждане на datasets за надеждност и приемни тестове, укрепване на средата за изпълнение и доставка на Lumis-1 готова за пилот.",
-            lumis: {
-                name: "Lumis-1",
-                status: "[В РАЗРАБОТКА]",
-                desc: "Нашият първи пакетиран продукт: on-device асистент с олекотен Validator Council (Safety, Consistency, Accuracy/Support) и ограничен steering loop.",
-                pitchDeck: "Pitch Deck (PDF)",
-                businessPlan: "Бизнес План (PDF)",
-                specsLabel: "SYS.SPEC",
-                specs: [
-                    "On-device",
-                    "Офлайн",
-                    "Слой за надеждност"
-                ]
-            }
+        research: {
+            label: "ИЗСЛЕДВАНИЯ",
+            headline: "Open-source AI изследвания и инструменти.",
+            projects: [
+                {
+                    id: "todorov",
+                    name: "todorov",
+                    tagline: "Унифицирана невронна архитектура",
+                    description: "312M параметъра, комбинираща KDA, Mamba-3 и MLA. Превъзхожда трансформери със същия размер с 16%.",
+                    url: "https://github.com/eptesicuslabs/todorov"
+                },
+                {
+                    id: "emcp",
+                    name: "eMCP",
+                    tagline: "Open-Source MCP сървъри",
+                    description: "34 локални MCP сървъра с 130+ инструмента за десктоп AI работни процеси.",
+                    url: "https://github.com/eptesicuslabs/eMCP"
+                },
+                {
+                    id: "eskill",
+                    name: "eSkill",
+                    tagline: "Claude Code Skills",
+                    description: "44 умения и 6 агента, които оркестрират MCP инструменти в по-високи работни процеси.",
+                    url: "https://github.com/eptesicuslabs/eSkill"
+                },
+                {
+                    id: "eagent",
+                    name: "eAgent",
+                    tagline: "AI агент платформа",
+                    description: "Rust/Tauri десктоп приложение за мулти-агентна оркестрация. Независима от доставчик.",
+                    url: "https://github.com/eptesicuslabs/eAgent"
+                }
+            ]
         },
         team: {
             label: "Нашият Екип",
@@ -303,103 +218,74 @@ export const translations = {
             narrative: "Оперативен Наратив",
             stack: "Технически Stack"
         },
-        products: {
-            label: "Продукти",
-            description: "On-device AI асистент с олекотен Validator Council и ограничен steering loop.",
-            status: "В разработка",
-            overviewText: "Нашият първи пакетиран продукт: on-device асистент с олекотен Validator Council (Safety, Consistency, Accuracy/Support) и ограничен steering loop.",
-            specsTitle: "Технически Спецификации",
-            specs: ["On-device обработка", "Офлайн режим", "Вграден слой за надеждност", "Enterprise-ready"],
-            tabs: {
-                overview: "Преглед",
-                reliability: "Слой за надеждност",
-                economics: "Икономика",
-                useCases: "Приложения"
-            }
-        },
         footer: {
-            pitchDeck: "Pitch Deck",
+            github: "GitHub",
             legal: "Eptesicus Laboratories е марка, управлявана от Деян Тодоров и Илиян Божанов. Eptesicus Laboratories не е регистрирано юридическо лице. Всички договори се сключват от Деян Тодоров и Илиян Божанов.",
             rights: "Всички права запазени.",
             x_twitter: "X (Twitter)",
             instagram: "Instagram",
             contact: "Контакт"
-        },
-        publications: {
-            label: "ПУБЛИКАЦИИ",
-            headline: "Последни Статии",
-            pageTitle: "Публикации",
-            pageDescription: "Изследвания, казуси и прозрения за on-device AI и инженеринг на надеждност.",
-            viewAll: "Всички публикации",
-            readMore: "Прочети повече",
-            backToList: "Назад към публикации",
-            backToHome: "Към началото",
-            minRead: "мин. четене",
-            share: "Сподели",
-            noResults: "Няма намерени публикации в тази категория.",
-            categories: {
-                all: "Всички",
-                research: "Изследване",
-                caseStudy: "Казус",
-                news: "Новини",
-                announcement: "Съобщение"
-            }
         }
     },
     el: {
         nav: {
             about: "Σχετικά",
-            products: "Προϊόντα",
+            research: "Έρευνα",
             team: "Ομάδα",
-            manifesto: "Μανιφέστο",
-            work: "Έργα",
             contact: "Επικοινωνία"
         },
         hero: {
             title: "Eptesicus Laboratories",
-            subtitle: "On-device AI με προβλέψιμη οικονομία μονάδας.",
-            body: "Κατασκευάζουμε περιβάλλον διακυβέρνησης και αξιολόγησης που καθιστά τις εγκαταστάσεις on-device AI πιο ελέγξιμες και οικονομικά προβλέψιμες, ξεκινώντας με το Lumis-1 ως το πρώτο πακεταρισμένο προϊόν.",
-            pills: ["Μειώνει το κόστος Cloud API", "Enterprise αδειοδότηση", "OEM/ISV συνεργασίες"]
+            subtitle: "Ανεξάρτητη Έρευνα AI",
+            cta: {
+                primary: "Δείτε στο GitHub"
+            }
         },
         about: {
             label: "ΣΧΕΤΙΚΑ",
-            headline: "Στόχος μας είναι να κάνουμε το on-device AI το πρότυπο για πραγματικά προϊόντα.",
-            intro1: "Το Cloud AI είναι εύκολο για να ξεκινήσεις, αλλά ακριβό και περιοριστικό στην κλιμάκωση. Η on-device εγκατάσταση δίνει στις ομάδες έλεγχο στο κόστος, την ιδιωτικότητα και τη διαθεσιμότητα, αλλά λειτουργεί μόνο όταν τα μοντέλα είναι αποδοτικά και αξιόπιστα.",
-            intro2: "Αναπτύσσουμε μικρά γλωσσικά μοντέλα βελτιστοποιημένα για υψηλή απόδοση και τα συνδυάζουμε με μηχανική αξιοπιστίας ώστε οι επιχειρήσεις να μπορούν να εγκαταστήσουν on-device νοημοσύνη με εμπιστοσύνη.",
+            headline: "Ερευνούμε αποδοτικές αρχιτεκτονικές AI και δημιουργούμε open-source εργαλεία για AI-native ροές εργασίας.",
             problemLabel: "Το Πρόβλημα",
-            problemBody: "Το Cloud-first AI δημιουργεί αυξανόμενα κόστη, εξάρτηση από προμηθευτή και έκθεση δεδομένων. Πολλά μικρά μοντέλα εξακολουθούν να δυσκολεύονται με τη συνέπεια και τις ασφαλείς λειτουργίες αποτυχίας, που μπλοκάρουν τη σοβαρή εγκατάσταση.",
-            solutionLabel: "Η Λύση μας",
-            approachLabel: "Η Προσέγγισή μας",
-            approachTagline: "Χτίζουμε για παράδοση, όχι για demos.",
-            grid: [
-                { title: "Model R&D", desc: "βελτίωση της ικανότητας ανά υπολογισμό σε μικρά γλωσσικά μοντέλα (μετρημένη έναντι δημόσιων baselines και εσωτερικών evals)." },
-                { title: "Υποδομή αξιοπιστίας", desc: "datasets + εργαλεία αξιολόγησης που εντοπίζουν παλινδρομήσεις και ποσοτικοποιούν βελτιώσεις." },
-                { title: "Διαδρομές εγκατάστασης", desc: "πακετάρισμα, έλεγχοι και μοτίβα ενσωμάτωσης που λειτουργούν για enterprise και OEM/ISV διανομή." }
-            ],
-            visionLabel: "Όραμα",
-            visionBody: "Ένας κόσμος όπου η AI τρέχει κυρίως σε hardware ελεγχόμενο από τον πελάτη, με μικρά μοντέλα που είναι τόσο ικανά όσο και αξιόπιστα. Η Eptesicus Laboratories θα χτίσει ένα χαρτοφυλάκιο on-device μοντέλων και εργαλείων αξιοπιστίας.",
-            leadershipQuote: "«Χτίζουμε τα θεμέλια για την εμπορική κλιμάκωση του on-device AI: αποδοτικά μικρά μοντέλα, μετρήσιμη αξιοπιστία και διανομή μέσω enterprise αδειοδότησης.»",
+            problemBody: "Τα foundation models είναι ισχυρά αλλά υπολογιστικά βαριά, εξαρτημένα από το cloud και κλειστά. Καθώς η AI γίνεται υποδομή, χρειαζόμαστε αρχιτεκτονικές αποδοτικές εκ σχεδιασμού και εργαλεία που τρέχουν τοπικά.",
+            solutionLabel: "Η Προσέγγισή μας",
+            visionBody: "Συνδυάζουμε έρευνα νευρωνικών αρχιτεκτονικών με πρακτικά open-source εργαλεία. Η αρχιτεκτονική μας εργασία εξερευνά ενοποιημένα μοντέλα που ξεπερνούν τους transformers σε κλάσμα του υπολογιστικού κόστους. Τα εργαλεία μας κάνουν τις ροές εργασίας AI πιο γρήγορες και local-first.",
             roles: {
-                deyan: "Ιδρυτής & Διαχειριστής",
-                iliyan: "Συνιδρυτής & CTO"
+                deyan: "Ιδρυτής & Ερευνητής",
+                iliyan: "Συνιδρυτής"
             }
         },
-        work: {
-            header: "Ενεργές Οδηγίες",
-            subheader: "Συγκεντρώνουμε €50.000 για δημιουργία datasets αξιοπιστίας και δοκιμών αποδοχής, ενίσχυση του runtime και παράδοση Lumis-1 έτοιμου για pilot.",
-            lumis: {
-                name: "Lumis-1",
-                status: "[ΣΕ ΑΝΑΠΤΥΞΗ]",
-                desc: "Το πρώτο μας πακεταρισμένο προϊόν: on-device βοηθός με ελαφρύ Validator Council (Safety, Consistency, Accuracy/Support) και περιορισμένο steering loop.",
-                pitchDeck: "Pitch Deck (PDF)",
-                businessPlan: "Επιχειρηματικό Πλάνο (PDF)",
-                specsLabel: "SYS.SPEC",
-                specs: [
-                    "On-device",
-                    "Offline",
-                    "Επίπεδο αξιοπιστίας"
-                ]
-            }
+        research: {
+            label: "ΕΡΕΥΝΑ",
+            headline: "Open-source έρευνα AI και εργαλεία.",
+            projects: [
+                {
+                    id: "todorov",
+                    name: "todorov",
+                    tagline: "Ενοποιημένη Νευρωνική Αρχιτεκτονική",
+                    description: "312M παράμετροι, συνδυάζοντας KDA, Mamba-3 και MLA. Ξεπερνά transformers ίδιου μεγέθους κατά 16%.",
+                    url: "https://github.com/eptesicuslabs/todorov"
+                },
+                {
+                    id: "emcp",
+                    name: "eMCP",
+                    tagline: "Open-Source MCP Servers",
+                    description: "34 τοπικοί MCP servers με 130+ εργαλεία για desktop AI ροές εργασίας.",
+                    url: "https://github.com/eptesicuslabs/eMCP"
+                },
+                {
+                    id: "eskill",
+                    name: "eSkill",
+                    tagline: "Claude Code Skills",
+                    description: "44 δεξιότητες και 6 agents που ενορχηστρώνουν MCP εργαλεία σε ροές εργασίας υψηλότερου επιπέδου.",
+                    url: "https://github.com/eptesicuslabs/eSkill"
+                },
+                {
+                    id: "eagent",
+                    name: "eAgent",
+                    tagline: "Πλατφόρμα AI Agents",
+                    description: "Rust/Tauri desktop εφαρμογή για multi-agent ενορχήστρωση. Ανεξάρτητη από πάροχο.",
+                    url: "https://github.com/eptesicuslabs/eAgent"
+                }
+            ]
         },
         team: {
             label: "Η Ομάδα μας",
@@ -408,103 +294,74 @@ export const translations = {
             narrative: "Λειτουργική Αφήγηση",
             stack: "Τεχνικό Stack"
         },
-        products: {
-            label: "Προϊόντα",
-            description: "On-device AI βοηθός με ελαφρύ Validator Council και περιορισμένο steering loop.",
-            status: "Σε ανάπτυξη",
-            overviewText: "Το πρώτο μας πακεταρισμένο προϊόν: on-device βοηθός με ελαφρύ Validator Council (Safety, Consistency, Accuracy/Support) και περιορισμένο steering loop.",
-            specsTitle: "Τεχνικές Προδιαγραφές",
-            specs: ["On-device επεξεργασία", "Offline λειτουργία", "Ενσωματωμένο επίπεδο αξιοπιστίας", "Enterprise-ready"],
-            tabs: {
-                overview: "Επισκόπηση",
-                reliability: "Επίπεδο Αξιοπιστίας",
-                economics: "Οικονομικά",
-                useCases: "Περιπτώσεις Χρήσης"
-            }
-        },
         footer: {
-            pitchDeck: "Pitch Deck",
+            github: "GitHub",
             legal: "Η Eptesicus Laboratories είναι εμπορική επωνυμία που λειτουργεί από τους Deyan Todorov και Iliyan Bozhanov. Η Eptesicus Laboratories δεν είναι εγγεγραμμένη νομική οντότητα. Όλες οι συμβάσεις συνάπτονται από τους Deyan Todorov και Iliyan Bozhanov.",
             rights: "Με επιφύλαξη παντός δικαιώματος.",
             x_twitter: "X (Twitter)",
             instagram: "Instagram",
             contact: "Επικοινωνία"
-        },
-        publications: {
-            label: "ΔΗΜΟΣΙΕΥΣΕΙΣ",
-            headline: "Τελευταίες Πληροφορίες",
-            pageTitle: "Δημοσιεύσεις",
-            pageDescription: "Έρευνα, μελέτες περιπτώσεων και πληροφορίες για on-device AI και μηχανική αξιοπιστίας.",
-            viewAll: "Όλες οι δημοσιεύσεις",
-            readMore: "Διαβάστε περισσότερα",
-            backToList: "Πίσω στις Δημοσιεύσεις",
-            backToHome: "Επιστροφή στην Αρχική",
-            minRead: "λεπτά ανάγνωσης",
-            share: "Κοινοποίηση",
-            noResults: "Δεν βρέθηκαν δημοσιεύσεις σε αυτήν την κατηγορία.",
-            categories: {
-                all: "Όλα",
-                research: "Έρευνα",
-                caseStudy: "Μελέτη Περίπτωσης",
-                news: "Νέα",
-                announcement: "Ανακοίνωση"
-            }
         }
     },
     it: {
         nav: {
             about: "Chi Siamo",
-            products: "Prodotti",
+            research: "Ricerca",
             team: "Team",
-            manifesto: "Manifesto",
-            work: "Lavori",
             contact: "Contatti"
         },
         hero: {
             title: "Eptesicus Laboratories",
-            subtitle: "IA on-device con unit economics prevedibili.",
-            body: "Costruiamo piccoli modelli linguistici ad alte prestazioni e l'infrastruttura di affidabilità per distribuirli su hardware controllato dal cliente, riducendo la dipendenza dalle API cloud.",
-            pills: ["Riduzione costi API Cloud", "Licenze Enterprise", "Partnership OEM/ISV"]
+            subtitle: "Ricerca AI Indipendente",
+            cta: {
+                primary: "Vedi su GitHub"
+            }
         },
         about: {
             label: "CHI SIAMO",
-            headline: "Il nostro obiettivo è rendere l'IA on-device lo standard per i prodotti reali.",
-            intro1: "L'IA in Cloud è facile all'inizio, ma costosa e restrittiva da scalare. Il deployment locale offre controllo su costi, privacy e disponibilità, ma funziona solo se i modelli sono efficienti e affidabili.",
-            intro2: "Sviluppiamo piccoli modelli ottimizzati per performance e li abbiniamo a ingegneria dell'affidabilità affinché le aziende possano distribuire intelligenza locale con fiducia.",
+            headline: "Ricerchiamo architetture AI efficienti e creiamo strumenti open-source per workflow AI-nativi.",
             problemLabel: "Il Problema",
-            problemBody: "L'IA Cloud-first crea costi crescenti, vendor lock-in ed esposizione dei dati. Molti piccoli modelli faticano ancora con la coerenza, bloccando il deployment serio.",
-            solutionLabel: "La Nostra Soluzione",
-            approachLabel: "Il Nostro Approccio",
-            approachTagline: "Costruiamo per spedire, non per demo.",
-            grid: [
-                { title: "R&D Modelli", desc: "migliorare la capacità per calcolo nei piccoli modelli linguistici (misurata rispetto a baseline pubbliche)." },
-                { title: "Infrastruttura di affidabilità", desc: "dataset + strumenti di valutazione che catturano regressioni e quantificano miglioramenti." },
-                { title: "Percorsi di deployment", desc: "pacchettizzazione, controlli e pattern di integrazione per distribuzione Enterprise e OEM/ISV." }
-            ],
-            visionLabel: "Visione",
-            visionBody: "Un mondo in cui l'IA gira principalmente su hardware controllato dal cliente. Eptesicus Laboratories costruirà un portafoglio di modelli on-device e strumenti di affidabilità.",
-            leadershipQuote: "“Stiamo costruendo le fondamenta per scalare commercialmente l'IA on-device: modelli efficienti, affidabilità misurabile e distribuzione tramite licenze Enterprise.”",
+            problemBody: "I foundation model sono potenti ma richiedono molte risorse computazionali, dipendono dal cloud e sono chiusi. Poiché l'AI diventa infrastruttura, servono architetture efficienti per design e strumenti che funzionino localmente.",
+            solutionLabel: "Il Nostro Approccio",
+            visionBody: "Combiniamo ricerca su architetture neurali con strumenti open-source pratici. Il nostro lavoro sulle architetture esplora modelli unificati che superano i transformer con una frazione del calcolo. I nostri strumenti rendono i workflow di sviluppo AI più veloci e local-first.",
             roles: {
-                deyan: "Fondatore & Operatore",
-                iliyan: "Co-Fondatore & CTO"
+                deyan: "Fondatore & Ricercatore",
+                iliyan: "Co-Fondatore"
             }
         },
-        work: {
-            header: "Direttive Attive",
-            subheader: "Attualmente alla ricerca di finanziamenti pre-seed per espandere dataset di affidabilità, assicurare pilot aziendali e approfondire partnership OEM/ISV.",
-            lumis: {
-                name: "Lumis-1",
-                status: "[IN SVILUPPO]",
-                desc: "Il nostro primo prodotto commerciale: un assistente on-device progettato per validare il business case del deployment locale.",
-                pitchDeck: "Pitch Deck (PDF)",
-                businessPlan: "Business Plan (PDF)",
-                specsLabel: "SYS.SPEC",
-                specs: [
-                    "On-device",
-                    "Offline-capable",
-                    "Livello di affidabilità"
-                ]
-            }
+        research: {
+            label: "RICERCA",
+            headline: "Ricerca AI open-source e strumenti.",
+            projects: [
+                {
+                    id: "todorov",
+                    name: "todorov",
+                    tagline: "Architettura Neurale Unificata",
+                    description: "312M parametri combinando KDA, Mamba-3 e MLA. Supera transformer della stessa dimensione del 16%.",
+                    url: "https://github.com/eptesicuslabs/todorov"
+                },
+                {
+                    id: "emcp",
+                    name: "eMCP",
+                    tagline: "Server MCP Open-Source",
+                    description: "34 server MCP locali con 130+ strumenti per workflow AI desktop.",
+                    url: "https://github.com/eptesicuslabs/eMCP"
+                },
+                {
+                    id: "eskill",
+                    name: "eSkill",
+                    tagline: "Claude Code Skills",
+                    description: "44 skill e 6 agenti che orchestrano strumenti MCP in workflow di livello superiore.",
+                    url: "https://github.com/eptesicuslabs/eSkill"
+                },
+                {
+                    id: "eagent",
+                    name: "eAgent",
+                    tagline: "Piattaforma AI Agent",
+                    description: "App desktop Rust/Tauri per orchestrazione multi-agente. Indipendente dal provider.",
+                    url: "https://github.com/eptesicuslabs/eAgent"
+                }
+            ]
         },
         team: {
             label: "Il Nostro Team",
@@ -513,47 +370,13 @@ export const translations = {
             narrative: "Narrativa Operativa",
             stack: "Stack di Capacità Tecniche"
         },
-        products: {
-            label: "Prodotti",
-            description: "Un assistente IA on-device con Validator Council leggero e steering loop limitato.",
-            status: "In Sviluppo",
-            overviewText: "Il nostro primo prodotto pacchettizzato: un assistente on-device con Validator Council leggero (Safety, Consistency, Accuracy/Support) e steering loop limitato.",
-            specsTitle: "Specifiche Tecniche",
-            specs: ["Elaborazione on-device", "Funzionalità offline", "Livello di affidabilità integrato", "Enterprise-ready"],
-            tabs: {
-                overview: "Panoramica",
-                reliability: "Livello di Affidabilità",
-                economics: "Economia",
-                useCases: "Casi d'Uso"
-            }
-        },
         footer: {
-            pitchDeck: "Pitch Deck",
+            github: "GitHub",
             legal: "Eptesicus Laboratories è un marchio operato da Deyan Todorov e Iliyan Bozhanov. Eptesicus Laboratories non è un'entità legale registrata. Tutti i contratti sono stipulati da Deyan Todorov e Iliyan Bozhanov.",
             rights: "Tutti i diritti riservati.",
             x_twitter: "X (Twitter)",
             instagram: "Instagram",
             contact: "Contatti"
-        },
-        publications: {
-            label: "PUBBLICAZIONI",
-            headline: "Ultimi Approfondimenti",
-            pageTitle: "Pubblicazioni",
-            pageDescription: "Ricerca, casi studio e approfondimenti su IA on-device e ingegneria dell'affidabilità.",
-            viewAll: "Tutte le pubblicazioni",
-            readMore: "Leggi di più",
-            backToList: "Torna alle Pubblicazioni",
-            backToHome: "Torna alla Home",
-            minRead: "min di lettura",
-            share: "Condividi",
-            noResults: "Nessuna pubblicazione trovata in questa categoria.",
-            categories: {
-                all: "Tutti",
-                research: "Ricerca",
-                caseStudy: "Caso Studio",
-                news: "Notizie",
-                announcement: "Annuncio"
-            }
         }
     }
 };

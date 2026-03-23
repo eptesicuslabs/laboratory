@@ -1,7 +1,7 @@
 'use client';
 
 import { useLanguage } from '@/components/providers/LanguageProvider';
-import { Mail, Twitter, Instagram } from 'lucide-react';
+import { Mail, Twitter, Instagram, Github } from 'lucide-react';
 import { useContactModal } from '@/components/providers/ContactModalProvider';
 
 export default function Footer() {
@@ -32,19 +32,20 @@ export default function Footer() {
                         <a href="#about" className="link">
                             {t.nav?.about || 'About'}
                         </a>
-                        <a href="#products" className="link">
-                            {t.nav?.products || 'Products'}
+                        <a href="#research" className="link">
+                            {t.nav?.research || 'Research'}
                         </a>
                         <a href="#team" className="link">
                             {t.nav?.team || 'Team'}
                         </a>
-                        <button
-                            type="button"
-                            onClick={() => open('Request Pitch Deck')}
-                            className="link bg-transparent border-0 p-0"
+                        <a
+                            href="https://github.com/eptesicuslabs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="link"
                         >
-                            {t.footer?.pitchDeck || 'Request Pitch Deck'}
-                        </button>
+                            {t.footer?.github || 'GitHub'}
+                        </a>
                     </div>
 
                     <span className="divider-vertical hidden sm:block" />
@@ -56,6 +57,15 @@ export default function Footer() {
                             aria-label="Email"
                         >
                             <Mail size={18} />
+                        </a>
+                        <a
+                            href="https://github.com/eptesicuslabs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-link"
+                            aria-label="GitHub"
+                        >
+                            <Github size={18} />
                         </a>
                         <a
                             href="https://x.com/eptesicuslabs"

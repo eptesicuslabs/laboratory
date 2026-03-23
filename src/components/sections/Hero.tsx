@@ -3,11 +3,9 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/components/providers/LanguageProvider';
-import { useContactModal } from '@/components/providers/ContactModalProvider';
 
 export default function Hero() {
     const { t } = useLanguage();
-    const { open } = useContactModal();
 
     const handleScrollDown = () => {
         const aboutSection = document.getElementById('about');
@@ -40,16 +38,17 @@ export default function Hero() {
                 </motion.p>
 
                 {/* CTA Button */}
-                <motion.button
+                <motion.a
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
-                    type="button"
-                    onClick={() => open('Request Pitch Deck')}
+                    href="https://github.com/eptesicuslabs"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn btn-primary btn-lg"
                 >
-                    {t.hero?.cta?.primary || 'Request Pitch Deck'}
-                </motion.button>
+                    {t.hero?.cta?.primary || 'View on GitHub'}
+                </motion.a>
             </div>
 
             {/* Scroll Indicator */}

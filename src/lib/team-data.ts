@@ -34,7 +34,7 @@ export const TEAM_MEMBERS: Record<string, TeamMember> = {
     "iliyan-bozhanov": {
         slug: "iliyan-bozhanov",
         name: "Iliyan Bozhanov",
-        role: "Co-Founder & CTO",
+        role: "Co-Founder",
         bio: "Architecting the distributed systems and tooling infrastructure that powers Eptesicus research and open-source projects.",
         stack: ["Distributed Systems", "Cryptography", "Model Optimization", "Python"],
         narrative: "Building the infrastructure that lets small, efficient models prove they can punch above their weight class through rigorous engineering and open-source collaboration.",

@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 
@@ -29,11 +28,7 @@ export default function TeamSection() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-[var(--space-4)] max-w-md mx-auto">
                         {/* Deyan Todorov */}
-                        <Link
-                            href="/team/deyan-todorov/"
-                            className="group card-glass card-interactive flex items-center justify-center"
-                            aria-label="View profile: Deyan Todorov"
-                        >
+                        <div className="card-glass flex items-center justify-center">
                             <div className="flex items-center gap-[var(--space-3)]">
                                 <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[var(--border-default)] flex-shrink-0">
                                     <Image
@@ -44,22 +39,18 @@ export default function TeamSection() {
                                     />
                                 </div>
                                 <div className="text-left">
-                                    <h5 className="text-[var(--text-primary)] font-medium group-hover:text-[var(--accent)] transition-colors text-sm">
+                                    <h5 className="text-[var(--text-primary)] font-medium text-sm">
                                         Deyan Todorov
                                     </h5>
                                     <p className="text-xs text-[var(--text-secondary)]">
-                                        {t.about?.roles?.deyan || 'Founder & Operator'}
+                                        {t.about?.roles?.deyan || 'Founder & Researcher'}
                                     </p>
                                 </div>
                             </div>
-                        </Link>
+                        </div>
 
                         {/* Iliyan Bozhanov */}
-                        <Link
-                            href="/team/iliyan-bozhanov/"
-                            className="group card-glass card-interactive flex items-center justify-center"
-                            aria-label="View profile: Iliyan Bozhanov"
-                        >
+                        <div className="card-glass flex items-center justify-center">
                             <div className="flex items-center gap-[var(--space-3)]">
                                 <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[var(--border-default)] flex-shrink-0">
                                     <Image
@@ -70,15 +61,15 @@ export default function TeamSection() {
                                     />
                                 </div>
                                 <div className="text-left">
-                                    <h5 className="text-[var(--text-primary)] font-medium group-hover:text-[var(--accent)] transition-colors text-sm">
+                                    <h5 className="text-[var(--text-primary)] font-medium text-sm">
                                         Iliyan Bozhanov
                                     </h5>
                                     <p className="text-xs text-[var(--text-secondary)]">
-                                        {t.about?.roles?.iliyan || 'Co-Founder & CTO'}
+                                        {t.about?.roles?.iliyan || 'Co-Founder'}
                                     </p>
                                 </div>
                             </div>
-                        </Link>
+                        </div>
                     </div>
                 </motion.div>
             </div>

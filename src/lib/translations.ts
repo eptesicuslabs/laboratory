@@ -22,7 +22,7 @@ export const translations = {
             visionBody: "We combine neural architecture research with practical open-source tooling. Our architecture work explores unified models that outperform transformers at a fraction of the compute. Our tooling makes AI development workflows faster and local-first.",
             roles: {
                 deyan: "Founder & Researcher",
-                iliyan: "Co-Founder & CTO"
+                iliyan: "Co-Founder"
             }
         },
         research: {
@@ -98,7 +98,7 @@ export const translations = {
             visionBody: "Wir kombinieren Forschung an neuronalen Architekturen mit praktischen Open-Source-Tools. Unsere Architekturarbeit erforscht vereinheitlichte Modelle, die Transformers bei einem Bruchteil der Rechenleistung übertreffen. Unsere Tools machen KI-Entwicklungs-Workflows schneller und local-first.",
             roles: {
                 deyan: "Gründer & Forscher",
-                iliyan: "Mitgründer & CTO"
+                iliyan: "Mitgründer"
             }
         },
         research: {
@@ -174,7 +174,7 @@ export const translations = {
             visionBody: "Съчетаваме изследвания на невронни архитектури с практични open-source инструменти. Архитектурната ни работа изследва унифицирани модели, които превъзхождат трансформерите при малка част от изчислителните ресурси. Инструментите ни правят AI работните процеси по-бързи и local-first.",
             roles: {
                 deyan: "Основател & Изследовател",
-                iliyan: "Съосновател & CTO"
+                iliyan: "Съосновател"
             }
         },
         research: {
@@ -250,7 +250,7 @@ export const translations = {
             visionBody: "Συνδυάζουμε έρευνα νευρωνικών αρχιτεκτονικών με πρακτικά open-source εργαλεία. Η αρχιτεκτονική μας εργασία εξερευνά ενοποιημένα μοντέλα που ξεπερνούν τους transformers σε κλάσμα του υπολογιστικού κόστους. Τα εργαλεία μας κάνουν τις ροές εργασίας AI πιο γρήγορες και local-first.",
             roles: {
                 deyan: "Ιδρυτής & Ερευνητής",
-                iliyan: "Συνιδρυτής & CTO"
+                iliyan: "Συνιδρυτής"
             }
         },
         research: {
@@ -326,7 +326,7 @@ export const translations = {
             visionBody: "Combiniamo ricerca su architetture neurali con strumenti open-source pratici. Il nostro lavoro sulle architetture esplora modelli unificati che superano i transformer con una frazione del calcolo. I nostri strumenti rendono i workflow di sviluppo AI più veloci e local-first.",
             roles: {
                 deyan: "Fondatore & Ricercatore",
-                iliyan: "Co-Fondatore & CTO"
+                iliyan: "Co-Fondatore"
             }
         },
         research: {

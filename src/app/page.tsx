@@ -4,13 +4,13 @@ import About from "@/components/sections/About";
 import ResearchSection from "@/components/sections/ResearchSection";
 import TeamSection from "@/components/sections/TeamSection";
 import Footer from "@/components/layout/Footer";
-import GradientBackground from "@/components/ui/GradientBackground";
+import AtomBackground from "@/components/visuals/AtomBackground";
 
 export default function Home() {
   return (
     <main id="main-content" className="min-h-screen relative">
-      {/* Gradient Background */}
-      <GradientBackground />
+      {/* 3D Atom Background */}
+      <AtomBackground />
 
       {/* Content Layer */}
       <div className="relative z-10 flex flex-col min-h-screen">

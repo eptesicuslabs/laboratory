@@ -83,11 +83,15 @@ export default function ResearchSection() {
                                 href={project.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0, scale: 0.95, rotate: -1 }}
+                                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1, ease: [0.14, 1, 0.34, 1] }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
+                                whileHover={{ y: -6 }}
                                 className="card-glass card-interactive group"
+                                style={{ boxShadow: 'none', transition: 'box-shadow 0.3s ease' }}
+                                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 20px 2px rgba(59, 130, 246, 0.4), 0 0 40px 4px rgba(59, 130, 246, 0.15)'; }}
+                                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; }}
                             >
                                 <div className="flex items-start justify-between mb-[var(--space-4)]">
                                     <div className="icon-box">

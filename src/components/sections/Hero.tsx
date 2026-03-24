@@ -18,37 +18,45 @@ export default function Hero() {
         <section className="relative min-h-screen flex flex-col justify-center items-center px-[var(--space-5)]">
             <div className="relative z-10 flex flex-col items-center text-center mt-[var(--space-8)]">
                 {/* Main Title */}
-                <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, ease: 'easeOut' }}
-                    className="text-display mb-[var(--space-4)] md:mb-[var(--space-5)] px-[var(--space-2)]"
-                >
-                    {t.hero.title}
-                </motion.h1>
+                <h1 className="text-display mb-[var(--space-4)] md:mb-[var(--space-5)] px-[var(--space-2)]">
+                    {t.hero.title.split('').map((char, i) => (
+                        <motion.span
+                            key={i}
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: i * 0.02, ease: [0.14, 1, 0.34, 1] }}
+                            style={{ display: 'inline-block' }}
+                        >
+                            {char === ' ' ? '\u00A0' : char}
+                        </motion.span>
+                    ))}
+                </h1>
 
                 {/* Subtitle */}
                 <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+                    initial={{ opacity: 0, filter: 'blur(8px)' }}
+                    animate={{ opacity: 1, filter: 'blur(0px)' }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
                     className="text-body max-w-[var(--container-content)] mb-[var(--space-7)] md:mb-[var(--space-9)] px-[var(--space-4)]"
                 >
                     {t.hero.subtitle}
                 </motion.p>
 
                 {/* CTA Button */}
-                <motion.a
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
-                    href="https://github.com/eptesicuslabs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary btn-lg"
+                <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.8 }}
                 >
-                    {t.hero?.cta?.primary || 'View on GitHub'}
-                </motion.a>
+                    <a
+                        href="https://github.com/eptesicuslabs"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-primary btn-lg"
+                    >
+                        {t.hero?.cta?.primary || 'View on GitHub'}
+                    </a>
+                </motion.div>
             </div>
 
             {/* Scroll Indicator */}

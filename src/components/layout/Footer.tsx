@@ -28,7 +28,7 @@ export default function Footer() {
 
                 {/* Links and Social */}
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-[var(--space-5)] mb-[var(--space-8)]">
-                    <div className="flex items-center gap-[var(--space-5)] text-sm">
+                    <div className="flex items-center gap-[var(--space-5)] text-sm font-mono">
                         <a href="#about" className="link">
                             {t.nav?.about || 'About'}
                         </a>
@@ -91,7 +91,7 @@ export default function Footer() {
                 {/* Legal */}
                 <div className="text-center stack-sm">
                     <p className="text-xs text-[var(--text-tertiary)]">
-                        &copy; {new Date().getFullYear()} Eptesicus Laboratories. {t.footer?.rights || 'All rights reserved.'}
+                        &copy; {new Date().getFullYear()} Eptesicus Laboratories. {t.footer?.rights || 'All rights reserved.'}<span className="inline-block animate-pulse">_</span>
                     </p>
                     <p className="text-xs text-[var(--text-tertiary)]">
                         {t.footer?.legal || 'Not yet incorporated. Operated by Deyan Todorov and Iliyan Bozhanov.'}

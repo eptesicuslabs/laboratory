@@ -18,7 +18,7 @@ export default function About() {
                     transition={{ duration: 0.5, ease: 'easeOut' }}
                     className="text-center stack-sm"
                 >
-                    <h2 className="text-label">
+                    <h2 className="text-label font-mono">
                         {t.about.label}
                     </h2>
                     <h3 className="text-h1">
@@ -28,10 +28,10 @@ export default function About() {
 
                 {/* The Problem */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 * 0, ease: [0.14, 1, 0.34, 1] }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, ease: 'easeOut' }}
                     className="text-center stack-sm"
                 >
                     <h4 className="text-label-accent">
@@ -44,10 +44,10 @@ export default function About() {
 
                 {/* Our Solution */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 * 1, ease: [0.14, 1, 0.34, 1] }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, ease: 'easeOut' }}
                     className="text-center stack-sm"
                 >
                     <h4 className="text-label-accent">

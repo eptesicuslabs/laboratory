@@ -49,66 +49,66 @@
 
   /* ───────────────────────────────────────────────────────────────────────────
      COLORS — Accessible contrast ratios
-     All text colors meet WCAG AA (4.5:1) on white
+     All text colors meet WCAG AA (4.5:1) on dark backgrounds
      ─────────────────────────────────────────────────────────────────────────── */
 
   /* Backgrounds */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F9FAFB;
-  --bg-tertiary: #F3F4F6;
-  --bg-elevated: rgba(255, 255, 255, 0.85);
+  --bg-primary: #0A0A0B;
+  --bg-secondary: #111113;
+  --bg-tertiary: #1A1A1D;
+  --bg-elevated: rgba(26, 26, 29, 0.9);
 
-  /* Text — All meet 4.5:1 contrast on white */
-  --text-primary: #111827;    /* gray-900 - 16.1:1 contrast */
-  --text-secondary: #4B5563;  /* gray-600 - 7.0:1 contrast */
-  --text-tertiary: #6B7280;   /* gray-500 - 5.0:1 contrast (minimum AA) */
-  --text-muted: #6B7280;      /* gray-500 - used sparingly for labels */
+  /* Text */
+  --text-primary: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --text-tertiary: #71717A;
+  --text-muted: #71717A;
 
-  /* Accent — Blue */
-  --accent: #2563EB;          /* blue-600 - 4.6:1 contrast */
-  --accent-hover: #1D4ED8;    /* blue-700 */
-  --accent-light: #DBEAFE;    /* blue-100 */
-  --accent-subtle: rgba(37, 99, 235, 0.1);
+  /* Accent — Blue (brighter for dark) */
+  --accent: #3B82F6;
+  --accent-hover: #60A5FA;
+  --accent-light: rgba(59, 130, 246, 0.15);
+  --accent-subtle: rgba(59, 130, 246, 0.1);
 
   /* Semantic */
-  --success: #16A34A;         /* green-600 */
-  --warning: #CA8A04;         /* yellow-600 */
-  --error: #DC2626;           /* red-600 */
+  --success: #22C55E;
+  --warning: #EAB308;
+  --error: #EF4444;
 
   /* Borders */
-  --border-default: #E5E7EB;  /* gray-200 */
-  --border-strong: #D1D5DB;   /* gray-300 */
+  --border-default: #27272A;
+  --border-strong: #3F3F46;
 
   /* Button colors */
-  --btn-primary-bg: #111827;     /* gray-900 */
-  --btn-primary-text: #FFFFFF;
-  --btn-primary-hover: #374151;  /* gray-700 */
-  --btn-primary-active: #1F2937; /* gray-800 */
+  --btn-primary-bg: #FAFAFA;
+  --btn-primary-text: #0A0A0B;
+  --btn-primary-hover: #E5E7EB;
+  --btn-primary-active: #D1D5DB;
 
   /* Nav scrolled state */
-  --nav-bg: rgba(255, 255, 255, 0.85);
-  --nav-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
-  --nav-border: rgba(0, 0, 0, 0.04);
+  --nav-bg: rgba(10, 10, 11, 0.85);
+  --nav-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  --nav-border: rgba(255, 255, 255, 0.06);
 
   /* Mobile menu */
-  --mobile-menu-bg: rgba(255, 255, 255, 0.97);
-  --mobile-menu-btn: #6B7280;
-  --mobile-menu-btn-hover: #111827;
+  --mobile-menu-bg: rgba(10, 10, 11, 0.97);
+  --mobile-menu-btn: #A1A1AA;
+  --mobile-menu-btn-hover: #FAFAFA;
 
   /* Card inset highlight */
-  --card-inset-highlight: rgba(255, 255, 255, 0.6);
-  --card-enhanced-hover-bg: rgba(255, 255, 255, 0.65);
-  --card-enhanced-hover-shadow: 0 12px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+  --card-inset-highlight: rgba(255, 255, 255, 0.05);
+  --card-enhanced-hover-bg: rgba(38, 38, 42, 0.8);
+  --card-enhanced-hover-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
 
   /* Category badge colors */
-  --category-research-bg: #EFF6FF;
-  --category-research-text: #2563EB;
-  --category-case-study-bg: #ECFDF5;
-  --category-case-study-text: #059669;
-  --category-news-bg: #FFFBEB;
-  --category-news-text: #D97706;
-  --category-announcement-bg: #F5F3FF;
-  --category-announcement-text: #7C3AED;
+  --category-research-bg: rgba(37, 99, 235, 0.15);
+  --category-research-text: #60A5FA;
+  --category-case-study-bg: rgba(5, 150, 105, 0.15);
+  --category-case-study-text: #34D399;
+  --category-news-bg: rgba(217, 119, 6, 0.15);
+  --category-news-text: #FBBF24;
+  --category-announcement-bg: rgba(124, 58, 237, 0.15);
+  --category-announcement-text: #A78BFA;
 
   /* ───────────────────────────────────────────────────────────────────────────
      LAYOUT — Two container widths only
@@ -129,10 +129,10 @@
   /* ───────────────────────────────────────────────────────────────────────────
      SHADOWS
      ─────────────────────────────────────────────────────────────────────────── */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
 
   /* ───────────────────────────────────────────────────────────────────────────
      MOTION — Unified timing
@@ -147,97 +147,95 @@
   /* ───────────────────────────────────────────────────────────────────────────
      GLASSMORPHISM
      ─────────────────────────────────────────────────────────────────────────── */
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.3);
-  --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --glass-bg: rgba(10, 10, 11, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   --glass-blur: blur(20px) saturate(180%);
 
-  /* Enhanced glassmorphism - 33% more effect */
-  --glass-enhanced-bg: rgba(255, 255, 255, 0.55);
-  --glass-enhanced-border: rgba(255, 255, 255, 0.45);
-  --glass-enhanced-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+  --glass-enhanced-bg: rgba(26, 26, 29, 0.7);
+  --glass-enhanced-border: rgba(255, 255, 255, 0.1);
+  --glass-enhanced-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
   --glass-enhanced-blur: blur(28px) saturate(200%);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   DARK MODE — System preference based
+   LIGHT MODE — System preference based
    ═══════════════════════════════════════════════════════════════════════════ */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    /* Backgrounds - inverted */
-    --bg-primary: #0A0A0B;
-    --bg-secondary: #111113;
-    --bg-tertiary: #1A1A1D;
-    --bg-elevated: rgba(26, 26, 29, 0.9);
+    /* Backgrounds */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F9FAFB;
+    --bg-tertiary: #F3F4F6;
+    --bg-elevated: rgba(255, 255, 255, 0.85);
 
-    /* Text - high contrast on dark */
-    --text-primary: #FAFAFA;
-    --text-secondary: #A1A1AA;
-    --text-tertiary: #71717A;
-    --text-muted: #71717A;
+    /* Text */
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --text-tertiary: #6B7280;
+    --text-muted: #6B7280;
 
-    /* Accent - slightly brighter for dark mode */
-    --accent: #3B82F6;
-    --accent-hover: #60A5FA;
-    --accent-light: rgba(59, 130, 246, 0.15);
-    --accent-subtle: rgba(59, 130, 246, 0.1);
+    /* Accent */
+    --accent: #2563EB;
+    --accent-hover: #1D4ED8;
+    --accent-light: #DBEAFE;
+    --accent-subtle: rgba(37, 99, 235, 0.1);
 
     /* Semantic */
-    --success: #22C55E;
-    --warning: #EAB308;
-    --error: #EF4444;
+    --success: #16A34A;
+    --warning: #CA8A04;
+    --error: #DC2626;
 
-    /* Borders - dark mode */
-    --border-default: #27272A;
-    --border-strong: #3F3F46;
+    /* Borders */
+    --border-default: #E5E7EB;
+    --border-strong: #D1D5DB;
 
-    /* Button colors - dark mode (inverted) */
-    --btn-primary-bg: #FAFAFA;
-    --btn-primary-text: #0A0A0B;
-    --btn-primary-hover: #E5E7EB;
-    --btn-primary-active: #D1D5DB;
+    /* Button colors */
+    --btn-primary-bg: #111827;
+    --btn-primary-text: #FFFFFF;
+    --btn-primary-hover: #374151;
+    --btn-primary-active: #1F2937;
 
-    /* Nav scrolled state - dark mode */
-    --nav-bg: rgba(26, 26, 29, 0.9);
-    --nav-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
-    --nav-border: rgba(255, 255, 255, 0.06);
+    /* Nav */
+    --nav-bg: rgba(255, 255, 255, 0.85);
+    --nav-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    --nav-border: rgba(0, 0, 0, 0.04);
 
-    /* Mobile menu - dark mode */
-    --mobile-menu-bg: rgba(10, 10, 11, 0.97);
-    --mobile-menu-btn: #A1A1AA;
-    --mobile-menu-btn-hover: #FAFAFA;
+    /* Mobile menu */
+    --mobile-menu-bg: rgba(255, 255, 255, 0.97);
+    --mobile-menu-btn: #6B7280;
+    --mobile-menu-btn-hover: #111827;
 
-    /* Card inset highlight - dark mode */
-    --card-inset-highlight: rgba(255, 255, 255, 0.05);
-    --card-enhanced-hover-bg: rgba(38, 38, 42, 0.8);
-    --card-enhanced-hover-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+    /* Card */
+    --card-inset-highlight: rgba(255, 255, 255, 0.6);
+    --card-enhanced-hover-bg: rgba(255, 255, 255, 0.65);
+    --card-enhanced-hover-shadow: 0 12px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
 
-    /* Category badge colors - dark mode */
-    --category-research-bg: rgba(37, 99, 235, 0.15);
-    --category-research-text: #60A5FA;
-    --category-case-study-bg: rgba(5, 150, 105, 0.15);
-    --category-case-study-text: #34D399;
-    --category-news-bg: rgba(217, 119, 6, 0.15);
-    --category-news-text: #FBBF24;
-    --category-announcement-bg: rgba(124, 58, 237, 0.15);
-    --category-announcement-text: #A78BFA;
+    /* Category badges */
+    --category-research-bg: #EFF6FF;
+    --category-research-text: #2563EB;
+    --category-case-study-bg: #ECFDF5;
+    --category-case-study-text: #059669;
+    --category-news-bg: #FFFBEB;
+    --category-news-text: #D97706;
+    --category-announcement-bg: #F5F3FF;
+    --category-announcement-text: #7C3AED;
 
-    /* Shadows - darker */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.1);
 
-    /* Glassmorphism - dark mode */
-    --glass-bg: rgba(26, 26, 29, 0.8);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
     --glass-blur: blur(20px) saturate(180%);
 
-    /* Enhanced glassmorphism - dark mode */
-    --glass-enhanced-bg: rgba(26, 26, 29, 0.7);
-    --glass-enhanced-border: rgba(255, 255, 255, 0.1);
-    --glass-enhanced-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    --glass-enhanced-bg: rgba(255, 255, 255, 0.55);
+    --glass-enhanced-border: rgba(255, 255, 255, 0.45);
+    --glass-enhanced-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
     --glass-enhanced-blur: blur(28px) saturate(200%);
   }
 }
@@ -526,6 +524,7 @@
 
 .btn-primary:hover {
   background-color: var(--btn-primary-hover);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
 }
 
 .btn-primary:active {
@@ -586,8 +585,8 @@
 }
 
 .card-interactive:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(59, 130, 246, 0.1);
 }
 
 /* Glass card */

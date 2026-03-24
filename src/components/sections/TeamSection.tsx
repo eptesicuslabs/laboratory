@@ -28,7 +28,13 @@ export default function TeamSection() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-[var(--space-4)] max-w-md mx-auto">
                         {/* Deyan Todorov */}
-                        <div className="card-glass flex items-center justify-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: -40 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0 * 0.15, ease: [0.14, 1, 0.34, 1] }}
+                            viewport={{ once: true }}
+                            className="card-glass flex items-center justify-center"
+                        >
                             <div className="flex items-center gap-[var(--space-3)]">
                                 <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[var(--border-default)] flex-shrink-0">
                                     <Image
@@ -47,10 +53,16 @@ export default function TeamSection() {
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* Iliyan Bozhanov */}
-                        <div className="card-glass flex items-center justify-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: 40 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 1 * 0.15, ease: [0.14, 1, 0.34, 1] }}
+                            viewport={{ once: true }}
+                            className="card-glass flex items-center justify-center"
+                        >
                             <div className="flex items-center gap-[var(--space-3)]">
                                 <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[var(--border-default)] flex-shrink-0">
                                     <Image
@@ -69,7 +81,7 @@ export default function TeamSection() {
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </motion.div>
             </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useMemo } from 'react';
+import type React from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import {
   AdditiveBlending,
@@ -266,18 +267,28 @@ function InnerGlow() {
 // ---------------------------------------------------------------------------
 // AtomScene — wrapper with rotation + breathing
 // ---------------------------------------------------------------------------
-function AtomScene({ isMobile }: { isMobile: boolean }) {
+function AtomScene({ isMobile, mouse, scrollProgress }: {
+  isMobile: boolean;
+  mouse: React.MutableRefObject<{ x: number; y: number }>;
+  scrollProgress: number;
+}) {
   const groupRef = useRef<Group>(null!);
   const coreCount = isMobile ? 150 : 300;
   const orbitalParticles = isMobile ? 40 : 60;
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
-    groupRef.current.rotation.y = t * 0.06;
-    groupRef.current.rotation.x = Math.sin(t * 0.03) * 0.15;
+    const mx = mouse.current.x;
+    const my = mouse.current.y;
 
+    // Base rotation + mouse influence (parallax tilt)
+    groupRef.current.rotation.y = t * 0.06 + mx * 0.15;
+    groupRef.current.rotation.x = Math.sin(t * 0.03) * 0.15 + my * 0.1;
+
+    // Scroll-responsive scale (1.0 → 1.15 as scroll progresses)
+    const scrollScale = 1 + scrollProgress * 0.15;
     const breathe = 1 + Math.sin(t * 0.4) * 0.025;
-    groupRef.current.scale.setScalar(breathe);
+    groupRef.current.scale.setScalar(breathe * scrollScale);
   });
 
   return (
@@ -295,18 +306,24 @@ function AtomScene({ isMobile }: { isMobile: boolean }) {
 // ---------------------------------------------------------------------------
 // Main export — Canvas + post-processing
 // ---------------------------------------------------------------------------
-export default function AtomVisualization({ isMobile }: { isMobile: boolean }) {
+export default function AtomVisualization({ isMobile, scrollProgress }: { isMobile: boolean; scrollProgress: number }) {
+  const mouse = useRef({ x: 0, y: 0 });
+
   return (
     <Canvas
       gl={{ alpha: true, antialias: true }}
       style={{ background: 'transparent' }}
       camera={{ position: [0, 0, 12], fov: 50 }}
       dpr={[1, isMobile ? 1.5 : 2]}
+      onPointerMove={(e) => {
+        mouse.current.x = (e.clientX / window.innerWidth) * 2 - 1;
+        mouse.current.y = -(e.clientY / window.innerHeight) * 2 + 1;
+      }}
     >
-      <AtomScene isMobile={isMobile} />
+      <AtomScene isMobile={isMobile} mouse={mouse} scrollProgress={scrollProgress} />
       <EffectComposer>
         <Bloom
-          intensity={isMobile ? 0.6 : 1.0}
+          intensity={(isMobile ? 0.6 : 1.0) + scrollProgress * 0.4}
           luminanceThreshold={0.15}
           luminanceSmoothing={0.9}
           mipmapBlur

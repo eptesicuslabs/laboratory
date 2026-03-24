@@ -20,7 +20,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   viewportFit: "cover", // Enable edge-to-edge on modern mobile browsers
-  themeColor: "#FFFFFF", // Match background for transparent nav bar
+  themeColor: "#0A0A0B", // Match background for transparent nav bar
 };
 
 export const metadata: Metadata = {

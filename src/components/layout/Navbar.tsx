@@ -135,7 +135,7 @@ export default function Navbar() {
                 transition={{ duration: 0.5, ease: easeOut }}
             >
                 <motion.nav
-                    className={`mx-auto ${isScrolled ? 'nav-scrolled nav-scrolled-shape' : 'nav-default-shape'}`}
+                    className={`mx-auto ${isScrolled ? 'nav-scrolled nav-scrolled-solid' : 'nav-default-shape'}`}
                     initial={false}
                     animate={{ maxWidth: isScrolled ? 900 : 1400 }}
                     transition={{ duration: 0.4, ease: easeOut }}
@@ -165,7 +165,7 @@ export default function Navbar() {
                                 />
                             </motion.div>
                             <motion.span
-                                className="font-medium text-[var(--text-primary)] whitespace-nowrap overflow-hidden"
+                                className="font-mono font-medium text-[var(--text-primary)] whitespace-nowrap overflow-hidden"
                                 initial={false}
                                 animate={{
                                     opacity: isScrolled ? 1 : 0,
@@ -185,7 +185,7 @@ export default function Navbar() {
                                     key={link.href}
                                     href={link.href}
                                     onClick={(e) => handleSmoothScroll(e, link.href.slice(1))}
-                                    className="link text-sm"
+                                    className="link text-sm hover:underline underline-offset-4"
                                 >
                                     {link.label}
                                 </a>
@@ -193,9 +193,9 @@ export default function Navbar() {
                             <button
                                 type="button"
                                 onClick={() => open()}
-                                className="btn btn-primary btn-sm"
+                                className="link text-sm hover:underline underline-offset-4"
                             >
-                                Contact
+                                Contact <span aria-hidden="true">&rarr;</span>
                             </button>
                         </div>
 

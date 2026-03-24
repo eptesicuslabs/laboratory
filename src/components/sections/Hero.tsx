@@ -16,67 +16,58 @@ export default function Hero() {
 
     return (
         <section className="relative min-h-screen flex flex-col justify-center items-center px-[var(--space-5)]">
-            <div className="relative z-10 flex flex-col items-center text-center mt-[var(--space-8)]">
-                {/* Main Title */}
-                <h1 className="text-display mb-[var(--space-4)] md:mb-[var(--space-5)] px-[var(--space-2)]">
-                    {t.hero.title.split('').map((char, i) => (
-                        <motion.span
-                            key={i}
-                            initial={{ opacity: 0, y: 40 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: i * 0.02, ease: [0.14, 1, 0.34, 1] }}
-                            style={{ display: 'inline-block' }}
-                        >
-                            {char === ' ' ? '\u00A0' : char}
-                        </motion.span>
-                    ))}
-                </h1>
+            <div className="flex flex-col items-center text-center">
+                {/* Main Title — monospace */}
+                <motion.h1
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 3.2 }}
+                    className="font-mono text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] font-semibold text-[var(--text-primary)] tracking-tight mb-[var(--space-4)]"
+                >
+                    {t.hero.title}
+                </motion.h1>
 
                 {/* Subtitle */}
                 <motion.p
-                    initial={{ opacity: 0, filter: 'blur(8px)' }}
-                    animate={{ opacity: 1, filter: 'blur(0px)' }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="text-body max-w-[var(--container-content)] mb-[var(--space-7)] md:mb-[var(--space-9)] px-[var(--space-4)]"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 3.5 }}
+                    className="font-mono text-[var(--text-tertiary)] text-sm md:text-base tracking-wider uppercase mb-[var(--space-8)]"
                 >
                     {t.hero.subtitle}
                 </motion.p>
 
-                {/* CTA Button */}
-                <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.8 }}
+                {/* CTA — text link, not button */}
+                <motion.a
+                    href="#research"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 3.8 }}
+                    className="font-mono text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors text-sm group"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        document.getElementById('research')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                 >
-                    <a
-                        href="https://github.com/eptesicuslabs"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-primary btn-lg"
-                    >
-                        {t.hero?.cta?.primary || 'View on GitHub'}
-                    </a>
-                </motion.div>
+                    Explore our work{' '}
+                    <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
+                </motion.a>
             </div>
 
             {/* Scroll Indicator */}
             <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
+                transition={{ duration: 0.8, delay: 4.0 }}
                 onClick={handleScrollDown}
                 className="absolute bottom-[var(--space-8)] left-1/2 -translate-x-1/2 text-[var(--text-tertiary)] hover:text-[var(--text-secondary)] transition-colors cursor-pointer"
                 aria-label="Scroll down"
             >
                 <motion.div
                     animate={{ y: [0, 6, 0] }}
-                    transition={{
-                        duration: 2.5,
-                        repeat: Infinity,
-                        ease: [0.45, 0, 0.55, 1]
-                    }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: [0.45, 0, 0.55, 1] }}
                 >
-                    <ChevronDown size={28} strokeWidth={1} />
+                    <ChevronDown size={24} strokeWidth={1} />
                 </motion.div>
             </motion.button>
         </section>

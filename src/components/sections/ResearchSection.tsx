@@ -2,121 +2,97 @@
 
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/components/providers/LanguageProvider';
-import { Cpu, Server, Zap, Bot, ExternalLink } from 'lucide-react';
 
-const projectIcons = {
-    todorov: Cpu,
-    emcp: Server,
-    eskill: Zap,
-    eagent: Bot,
-};
-
-interface Project {
-    id: string;
-    name: string;
-    tagline: string;
-    description: string;
-    url: string;
-}
+const projects = [
+    {
+        id: '01',
+        name: 'todorov',
+        stat: '312M params',
+        description: 'KDA + Mamba-3 + MLA architecture',
+        url: 'https://github.com/eptesicuslabs/todorov',
+    },
+    {
+        id: '02',
+        name: 'eMCP',
+        stat: '34 servers',
+        description: 'Model Context Protocol toolkit',
+        url: 'https://github.com/eptesicuslabs/eMCP',
+    },
+    {
+        id: '03',
+        name: 'eSkill',
+        stat: '44 skills',
+        description: 'Skill framework for Claude Code',
+        url: 'https://github.com/eptesicuslabs/eSkill',
+    },
+    {
+        id: '04',
+        name: 'eAgent',
+        stat: 'Desktop',
+        description: 'Rust/Tauri AI agent application',
+        url: 'https://github.com/eptesicuslabs/eAgent',
+    },
+];
 
 export default function ResearchSection() {
     const { t } = useLanguage();
 
-    const projects: Project[] = t.research?.projects || [
-        {
-            id: 'todorov',
-            name: 'todorov',
-            tagline: 'Unified Neural Architecture',
-            description: '312M params combining KDA, Mamba-3, and MLA. Outperforms same-size transformers by 16%.',
-            url: 'https://github.com/eptesicuslabs/todorov',
-        },
-        {
-            id: 'emcp',
-            name: 'eMCP',
-            tagline: 'Open-Source MCP Servers',
-            description: '34 local MCP servers exposing 130+ tools for desktop AI workflows.',
-            url: 'https://github.com/eptesicuslabs/eMCP',
-        },
-        {
-            id: 'eskill',
-            name: 'eSkill',
-            tagline: 'Claude Code Skills',
-            description: '44 skills and 6 agents that orchestrate MCP tools into higher-level workflows.',
-            url: 'https://github.com/eptesicuslabs/eSkill',
-        },
-        {
-            id: 'eagent',
-            name: 'eAgent',
-            tagline: 'AI Agent Platform',
-            description: 'Rust/Tauri desktop app for multi-agent orchestration. Provider-agnostic.',
-            url: 'https://github.com/eptesicuslabs/eAgent',
-        },
-    ];
-
     return (
-        <section id="research" className="section px-[var(--space-5)] relative">
-            <div className="container-wide stack-xl">
-
+        <section id="research" className="section px-[var(--space-5)]">
+            <div className="max-w-[720px] mx-auto font-mono">
                 {/* Section Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, ease: 'easeOut' }}
-                    className="text-center stack-sm"
+                    transition={{ duration: 0.5 }}
                 >
-                    <h2 className="text-label">
+                    <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--text-tertiary)] mb-[var(--space-3)]">
                         {t.research?.label || 'RESEARCH'}
                     </h2>
-                    <h3 className="text-h1">
-                        {t.research?.headline || 'Open-source AI research and tooling.'}
-                    </h3>
+                    <div className="text-[var(--border-default)] mb-[var(--space-7)] select-none" aria-hidden="true">
+                        {'─'.repeat(48)}
+                    </div>
                 </motion.div>
 
-                {/* Projects Grid */}
-                <div className="grid md:grid-cols-2 gap-[var(--space-5)]">
-                    {projects.map((project, index) => {
-                        const IconComponent = projectIcons[project.id as keyof typeof projectIcons] || Cpu;
-                        return (
-                            <motion.a
-                                key={project.id}
+                {/* Project List */}
+                <div className="space-y-[var(--space-7)]">
+                    {projects.map((project, index) => (
+                        <motion.div
+                            key={project.id}
+                            initial={{ opacity: 0, y: 12 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: index * 0.08, ease: [0.14, 1, 0.34, 1] }}
+                        >
+                            {/* Project header: number + name ... stat */}
+                            <div className="flex justify-between items-baseline mb-[var(--space-1)]">
+                                <span className="text-[var(--text-primary)] text-base">
+                                    <span className="text-[var(--text-tertiary)] mr-[var(--space-3)]">{project.id}</span>
+                                    {project.name}
+                                </span>
+                                <span className="text-[var(--text-tertiary)] text-xs">
+                                    {project.stat}
+                                </span>
+                            </div>
+
+                            {/* Description */}
+                            <p className="text-[var(--text-tertiary)] text-sm ml-[calc(var(--space-3)+1.5ch)] mb-[var(--space-1)]">
+                                {project.description}
+                            </p>
+
+                            {/* Link */}
+                            <a
                                 href={project.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                initial={{ opacity: 0, scale: 0.95, rotate: -1 }}
-                                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1, ease: [0.14, 1, 0.34, 1] }}
-                                viewport={{ once: true }}
-                                whileHover={{ y: -6 }}
-                                className="card-glass card-interactive group"
-                                style={{ boxShadow: 'none', transition: 'box-shadow 0.3s ease' }}
-                                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 20px 2px rgba(59, 130, 246, 0.4), 0 0 40px 4px rgba(59, 130, 246, 0.15)'; }}
-                                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; }}
+                                className="text-[var(--text-tertiary)] hover:text-[var(--accent)] transition-colors text-xs ml-[calc(var(--space-3)+1.5ch)]"
                             >
-                                <div className="flex items-start justify-between mb-[var(--space-4)]">
-                                    <div className="icon-box">
-                                        <IconComponent size={20} />
-                                    </div>
-                                    <ExternalLink
-                                        size={16}
-                                        className="text-[var(--text-tertiary)] group-hover:text-[var(--accent)] transition-colors"
-                                    />
-                                </div>
-
-                                <h4 className="text-h2 mb-[var(--space-1)] group-hover:text-[var(--accent)] transition-colors">
-                                    {project.name}
-                                </h4>
-                                <p className="text-label-accent mb-[var(--space-3)]">
-                                    {project.tagline}
-                                </p>
-                                <p className="text-body-sm">
-                                    {project.description}
-                                </p>
-                            </motion.a>
-                        );
-                    })}
+                                → {project.url.replace('https://', '')}
+                            </a>
+                        </motion.div>
+                    ))}
                 </div>
-
             </div>
         </section>
     );

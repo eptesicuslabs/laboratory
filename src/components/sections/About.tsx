@@ -8,7 +8,7 @@ export default function About() {
 
     return (
         <section id="about" className="section px-[var(--space-5)] relative">
-            <div className="container-wide stack-xl">
+            <div className="container-wide stack-xl max-w-[720px] mx-auto">
 
                 {/* Section Header */}
                 <motion.div
@@ -16,14 +16,12 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, ease: 'easeOut' }}
-                    className="text-center stack-sm"
+                    className="text-center"
                 >
                     <h2 className="text-label font-mono">
                         {t.about.label}
                     </h2>
-                    <h3 className="text-h1">
-                        {t.about.headline}
-                    </h3>
+                    <div className="text-[var(--border-default)] mb-[var(--space-7)] select-none font-mono" aria-hidden="true">{'─'.repeat(48)}</div>
                 </motion.div>
 
                 {/* The Problem */}

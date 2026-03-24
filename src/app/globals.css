@@ -463,7 +463,8 @@
 
 /* Navbar shape states - CSS transitions */
 .nav-default-shape,
-.nav-scrolled-shape {
+.nav-scrolled-shape,
+.nav-scrolled-solid {
   position: relative;
   border-style: solid;
   transition:
@@ -487,6 +488,16 @@
   border-color: var(--nav-border);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
+}
+
+.nav-scrolled-solid {
+  border-radius: 9999px;
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.06);
+  background-color: var(--bg-primary);
+  box-shadow: none;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

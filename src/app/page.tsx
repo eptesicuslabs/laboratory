@@ -6,13 +6,13 @@ import ResearchPosts from "@/components/sections/ResearchPosts";
 import TeamSection from "@/components/sections/TeamSection";
 import Footer from "@/components/layout/Footer";
 import StartupOverlay from "@/components/visuals/StartupOverlay";
-import AsciiBackground from "@/components/visuals/AsciiBackground";
+import EcholocationPulse from "@/components/visuals/EcholocationPulse";
 
 export default function Home() {
   return (
     <main id="main-content" className="min-h-screen relative bg-[var(--bg-primary)]">
       <StartupOverlay />
-      <AsciiBackground />
+      <EcholocationPulse />
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
         <Hero />

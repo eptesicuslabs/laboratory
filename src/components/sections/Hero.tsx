@@ -3,17 +3,6 @@
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 
-const ASCII_BAT = `
-    /\\    /\\
-   {  \`--\`  }
-    \\      /
-     \`>  <\`
-     /    \\
-    {      }
-     \\    /
-      \`--\`
-`;
-
 export default function Hero() {
     const { t } = useLanguage();
 
@@ -32,24 +21,14 @@ export default function Hero() {
 
     return (
         <section className="relative min-h-screen flex flex-col justify-center items-center px-[var(--space-5)]">
-            {/* ASCII Bat */}
-            <motion.pre
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 3.0 }}
-                className="font-mono text-[var(--text-tertiary)] text-[0.5rem] md:text-xs leading-none mb-[var(--space-6)] select-none opacity-30"
-                aria-hidden="true"
-            >
-                {ASCII_BAT}
-            </motion.pre>
-
             <div className="flex flex-col items-center text-center">
                 {/* Main Title */}
                 <motion.h1
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 3.2 }}
-                    className="font-mono text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] font-semibold text-[var(--text-primary)] tracking-tight mb-[var(--space-4)]"
+                    className="font-mono font-semibold text-[var(--text-primary)] tracking-tight mb-[var(--space-4)]"
+                    style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
                 >
                     {t.hero.title}
                 </motion.h1>

@@ -45,7 +45,7 @@ export default function ResearchSection() {
     const { t } = useLanguage();
 
     return (
-        <section id="research" className="section px-[var(--space-5)]">
+        <section id="works" className="section px-[var(--space-5)]">
             <div className="max-w-[720px] mx-auto font-mono">
                 {/* Section Header */}
                 <motion.div
@@ -55,7 +55,7 @@ export default function ResearchSection() {
                     transition={{ duration: 0.5 }}
                 >
                     <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--text-tertiary)] mb-[var(--space-3)]">
-                        {t.research?.label || 'RESEARCH'}
+                        {'WORKS'}
                     </h2>
                     <div className="text-[var(--border-default)] mb-[var(--space-7)] select-none" aria-hidden="true">
                         {'─'.repeat(48)}

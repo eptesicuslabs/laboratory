@@ -84,7 +84,7 @@ export default function Navbar() {
     }, [isHomePage, router]);
 
     const navLinks = [
-        { href: '#research', label: 'Works' },
+        { href: '#works', label: 'Works' },
         { href: '#research', label: 'Research' },
         { href: '#team', label: 'Team' },
         { href: '#contact', label: 'Contact' },

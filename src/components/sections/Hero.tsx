@@ -18,7 +18,7 @@ export default function Hero() {
     const { t } = useLanguage();
 
     const quickLinks = [
-        { label: 'Works', href: '#research' },
+        { label: 'Works', href: '#works' },
         { label: 'Research', href: '#research' },
         { label: 'Team', href: '#team' },
         { label: 'Contact', href: '#contact' },

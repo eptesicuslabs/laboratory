@@ -25,7 +25,7 @@ export default function Footer() {
             <div className="max-w-[720px] mx-auto font-mono text-center mt-[var(--space-7)]">
                 <p className="text-xs text-[var(--text-secondary)] flex flex-wrap justify-center gap-x-1">
                     <a href="mailto:eptesicuslabs@gmail.com" className="hover:text-[var(--accent)] transition-colors">
-                        {t.footer?.contact || 'Email'}
+                        eptesicuslabs@gmail.com
                     </a>
                     <span className="text-[var(--text-tertiary)]">&middot;</span>
                     <a

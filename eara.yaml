@@ -1,0 +1,21 @@
+# eARA config — Eptesicus Laboratories website
+# Adapted from eptesicuslabs/eARA for web development
+
+train_script: "src/app/page.tsx"
+metric: "build_success"
+metric_direction: "higher"
+
+compute: "local"
+
+local:
+  command: "npm run build"
+  log_file: "build.log"
+  results_file: "build-results.json"
+
+time_budget_minutes: 5
+
+gates: {}
+
+knowledge_dir: ""
+docs_dir: ""
+state_dir: "."

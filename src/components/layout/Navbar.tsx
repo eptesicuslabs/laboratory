@@ -84,9 +84,10 @@ export default function Navbar() {
     }, [isHomePage, router]);
 
     const navLinks = [
-        { href: '#about', label: 'About' },
+        { href: '#research', label: 'Works' },
         { href: '#research', label: 'Research' },
         { href: '#team', label: 'Team' },
+        { href: '#contact', label: 'Contact' },
     ];
 
     // Consistent easing curve site-wide
@@ -190,13 +191,7 @@ export default function Navbar() {
                                     {link.label}
                                 </a>
                             ))}
-                            <button
-                                type="button"
-                                onClick={() => open()}
-                                className="link text-sm hover:underline underline-offset-4"
-                            >
-                                Contact <span aria-hidden="true">&rarr;</span>
-                            </button>
+{/* Contact is now in navLinks */}
                         </div>
 
                         {/* Mobile Menu Button */}

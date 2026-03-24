@@ -1,18 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 
 export default function Hero() {
     const { t } = useLanguage();
-
-    const handleScrollDown = () => {
-        const aboutSection = document.getElementById('about');
-        if (aboutSection) {
-            aboutSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
 
     return (
         <section className="relative min-h-screen flex flex-col justify-center items-center px-[var(--space-5)]">
@@ -37,39 +29,34 @@ export default function Hero() {
                     {t.hero.subtitle}
                 </motion.p>
 
-                {/* CTA — text link, not button */}
-                <motion.a
-                    href="#research"
+                {/* Project Links */}
+                <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 3.8 }}
-                    className="font-mono text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors text-sm group"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        document.getElementById('research')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
+                    className="flex flex-wrap justify-center gap-x-4 gap-y-2 font-mono text-sm"
                 >
-                    Explore our work{' '}
-                    <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
-                </motion.a>
+                    {[
+                        { name: 'todorov', url: 'https://github.com/eptesicuslabs/todorov' },
+                        { name: 'eMCP', url: 'https://github.com/eptesicuslabs/eMCP' },
+                        { name: 'eSkill', url: 'https://github.com/eptesicuslabs/eSkill' },
+                        { name: 'eAgent', url: 'https://github.com/eptesicuslabs/eAgent' },
+                        { name: 'eARA', url: 'https://github.com/eptesicuslabs/eARA' },
+                    ].map((project, i) => (
+                        <a
+                            key={project.name}
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[var(--text-tertiary)] hover:text-[var(--accent)] transition-colors"
+                        >
+                            {project.name}
+                            {i < 4 && <span className="ml-4 text-[var(--border-default)]">·</span>}
+                        </a>
+                    ))}
+                </motion.div>
             </div>
 
-            {/* Scroll Indicator */}
-            <motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 4.0 }}
-                onClick={handleScrollDown}
-                className="absolute bottom-[var(--space-8)] left-1/2 -translate-x-1/2 text-[var(--text-tertiary)] hover:text-[var(--text-secondary)] transition-colors cursor-pointer"
-                aria-label="Scroll down"
-            >
-                <motion.div
-                    animate={{ y: [0, 6, 0] }}
-                    transition={{ duration: 2.5, repeat: Infinity, ease: [0.45, 0, 0.55, 1] }}
-                >
-                    <ChevronDown size={24} strokeWidth={1} />
-                </motion.div>
-            </motion.button>
         </section>
     );
 }

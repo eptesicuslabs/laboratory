@@ -7,30 +7,37 @@ const projects = [
     {
         id: '01',
         name: 'todorov',
-        stat: '312M params',
-        description: 'KDA + Mamba-3 + MLA architecture',
+        stat: 'Flagship',
+        description: 'Our core neural architecture',
         url: 'https://github.com/eptesicuslabs/todorov',
     },
     {
         id: '02',
         name: 'eMCP',
         stat: '34 servers',
-        description: 'Model Context Protocol toolkit',
+        description: 'Local MCP servers, matching the best',
         url: 'https://github.com/eptesicuslabs/eMCP',
     },
     {
         id: '03',
         name: 'eSkill',
         stat: '44 skills',
-        description: 'Skill framework for Claude Code',
+        description: 'Our suite of Skills for Claude Code',
         url: 'https://github.com/eptesicuslabs/eSkill',
     },
     {
         id: '04',
         name: 'eAgent',
         stat: 'Desktop',
-        description: 'Rust/Tauri AI agent application',
+        description: 'Agentic platform — Claude Code and CoWork interfaces',
         url: 'https://github.com/eptesicuslabs/eAgent',
+    },
+    {
+        id: '05',
+        name: 'eARA',
+        stat: 'Internal',
+        description: 'Automated research agent for model training and prototyping',
+        url: 'https://github.com/eptesicuslabs/eARA',
     },
 ];
 
